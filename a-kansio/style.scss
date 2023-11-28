@@ -19,7 +19,8 @@ body {
   background: var(--background);
 }
 h1 {
-  color: $primary-color;
+  color: $primary-color;  
+  letter-spacing: 5px;
 }
 h2 {
   color: $secondary-color;
@@ -28,16 +29,14 @@ p {
   padding: 6px;
   line-height: 1.65;
 }
-
 nav {
   ul {
     overflow: hidden;
     list-style: none;
-
   }
   li {
     //display: inline-block;
-    float: right; 
+    float: right;
     a:hover {
       background-color: #111;
     }
@@ -62,7 +61,6 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  //transition: opacity 0.5s;
   height: 100vh; /* Set the height to 100% of the viewport height */
 
   .hero_img {
@@ -71,12 +69,8 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    //object-fit: cover;
-    z-index: 1;
     background-color: #111;
-    //transform: translateZ(1px);
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     position: relative;
   }
@@ -88,10 +82,12 @@ img {
     transform: translate(-50%, -50%);
     font-size: 36px;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
     text-align: center;
-    //transform: translateZ(-2px) scale(1.2);
+  }
+  #hero-text {
+    font-family: OCR A Std, monospace;
+    font-style: italic;
   }
 }
 
