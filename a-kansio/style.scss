@@ -8,12 +8,11 @@
 
 body {
   text-align: center;
-  color: rgb(95, 96, 115);
-  --background: linear-gradient(to bottom, #ffffff 0%, #4f80e2; 100%);
+  color: #d2e1e6;
+  --background: #e6eff3;
   width: 100%;
   height: 100%;
   font-family: Arial;
-  //display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -36,27 +35,15 @@ p {
   padding: 6px;
   line-height: 1.65;
 }
-nav {
-  ul {
-    overflow: hidden;
-    list-style: none;
-  }
-  li {
-    //display: inline-block;
-    float: right;
-    a:hover {
-      background-color: #111;
-    }
-  }
-  a {
-    color: $primary-color;
-    font-size: large;
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-  }
+h1 + p {
+  margin: 10px;
+  padding-top: 25px;
+  color: $primary-color;
+  font-size: 20px;
+  border-radius: 25px;
+  background-color: #d2e1e6;
+  box-shadow: 2px 2px 6px #9ab0be;
 }
-
 .hero {
   position: relative;
   display: flex;
@@ -71,7 +58,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #111;
+    background-color: #aac9dd;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -97,6 +84,7 @@ nav {
     font-style: italic;
   }
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -127,6 +115,9 @@ nav {
     color: $primary-color;
     background-color: transparent;
     text-decoration: none;
+  }
+  a:hover {
+    color: #111;
   }
 }
 
@@ -170,19 +161,23 @@ div.item {
 
 div.item:nth-of-type(1) {
   --offset: 1;
-  background-color: #204f84;
+  background-color: #4f77aa;
+  color: #c1e3ed;
 }
 div.item:nth-of-type(2) {
   --offset: 2;
-  background-color: rgb(35, 104, 161);
+  background-color: #78aed3;
+  color: #c1e3ed;
 }
 div.item:nth-of-type(3) {
   --offset: 3;
-  background-color: #719eff;
+  background-color: #aac9dd;
+  color: #4f77aa;
 }
 div.item:nth-of-type(4) {
   --offset: 4;
-  background-color: #131313;
+  background-color: #c1e3ed;
+  color: #4f77aa;
 }
 input:nth-of-type(1) {
   grid-column: 2 / 3;
@@ -221,18 +216,24 @@ div.item img {
 
 div.item p {
   margin: 0, 10px, 5px, 5px;
-  color: white;
 }
 
 div.item h3 {
   color: #fafaff;
+  text-shadow: 2px 2px 10px #000000;
 }
 #status {
-  padding: 15px;
+  margin-top: 10px;
+  padding: 10px;
   font-weight: bold;
+  //border-radius: 25px;
   color: $secondary-color;
+  background-color: #e6eff3;
 }
 
+.container {
+  padding: 2px 16px;
+}
 footer {
   background: #111;
   padding: 10px;
