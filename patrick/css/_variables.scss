@@ -1,0 +1,21 @@
+:root {
+  --base-color: #eacdc2;
+  --darkbase-color: #3d2833;
+  --darker-red-color: #774c60;
+  --lighter-red-color: #b75d69;
+  --lighter-red-color-shadow: #3d2833;
+  --text-color: #372549;
+  --almost-black-shadow: rgb(22, 0, 1);
+  --text-color2: #eacdc2;
+}
+
+[data-theme="dark"] {
+  --base-color: #372549;
+  --darkbase-color: #1a1423;
+  --darker-red-color: #b75d69;
+  --lighter-red-color: #774c60;
+  --lighter-red-color-shadow: #3d2833;
+  --text-color: #eacdc2;
+  --almost-black-shadow: rgb(8, 0, 22);
+  --text-color2: #b75d69;
+}

@@ -61,9 +61,10 @@ h1 + p {
   width: 100%;
   height: 100%;
   background-color: #aac9dd;
+
   background-position: center;
   background-size: cover;
-  position: relative;
+  background-color: #888; /* Grey background color */
 }
 .hero .hero_title {
   position: absolute;
@@ -72,6 +73,7 @@ h1 + p {
   transform: translate(-50%, -50%);
   font-size: 36px;
   color: #fff;
+
   z-index: 2;
   text-align: center;
 }
@@ -266,3 +268,4 @@ footer {
     flex: 1;
   }
 }/*# sourceMappingURL=style.css.map */
+

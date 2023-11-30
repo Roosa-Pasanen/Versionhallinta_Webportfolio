@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
+<!-- HEAD STARTS HERE -->
 
 <head>
     <meta charset="UTF-8">
@@ -8,70 +10,442 @@
     <title>Sumu Vuori</title>
 </head>
 
-<body>
-    <header>
-        <div id="logo"></div>
+<!-- BODY STARTS HERE -->
 
+<body class="no-transitions">
+    <!-- HEADER STARTS HERE -->
+    <header id="header">
+        <!-- LOGO DIV -->
+        <div class="headerbg"></div>
+        <div id="logo">
+            <a href="#info">
+                <div class="logoimg"></div>
+            </a>
+            <h1><a href="#info">Sumu Vuori</a></h1>
+        </div>
+        <div id="themebutton" class="hide">
+            <div id="sun-moon"></div>
+        </div>
+
+        <!-- MENU HAMBURGER -->
         <div id="hamburger">
             <div class="ham bar-top"></div>
             <div class="ham bar-mid"></div>
             <div class="ham bar-bot"></div>
         </div>
 
-        <div class="nav">
+        <!-- NAVIGATION -->
+        <div id="nav">
             <ul>
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+                <li><a href="#info">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </header>
 
+    <!-- MAIN STARTS HERE -->
     <main>
-        <section>
-            <h1>Section 1 title</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod justo et imperdiet auctor. Nam
-                elementum, nulla
-                porttitor malesuada condimentum, mi elit finibus leo, sagittis faucibus dolor mauris sed nulla. Mauris
-                ultricies, velit
-                et ultricies molestie, justo eros pretium mauris, malesuada eleifend elit sapien id enim. In et mi nunc.
-                Etiam vitae
-                pulvinar metus, at condimentum erat. Curabitur varius tincidunt urna id mollis. Nullam vestibulum tempor
-                vestibulum.
-            </p>
+        <!-- SECTION: INFO -->
+        <section class="no-transitions">
+            <!-- ANCHOR -->
+            <div class="anchor" id="info"></div>
+
+            <div class="hero">
+                <picture>
+                    <source media="(min-width: 500px)" srcset="img/big/hero.png">
+                    <img src="img/small/hero.png" alt="Placeholder image">
+                </picture>
+            </div>
+            <div class="content-wrapper columns">
+
+                <!-- CONTENT -->
+                <h1>About</h1>
+
+                <!-- ABOUT COLUMN -->
+                <div>
+                    <!-- GENERAL INFO -->
+                    <p>
+                        My name is Sumu Vuori and I'm currently studying Business Information Systems in TAMK. I'm
+                        specialising in Software Production, and more specifically my goal is to become a hard-working
+                        fullstack-developer. As a worker I'm well organized, determined and detail-oriented. I can work
+                        well
+                        both independently or in a team.
+                    </p>
+
+                    <p>
+                        I have previously studied game development, animation and graphic design. I have always been
+                        most
+                        faschinated with coding, but I'm also very interested in usability, accessibility and web
+                        design.
+                    </p>
+
+                    <p>
+                        As a person I'm positive and easy to approach. On my free time I love to play video games, do
+                        fiber
+                        crafts and spend time with my friends.
+                    </p>
+                </div>
+
+                <!-- SKILLSET COLUMN -->
+                <div class="skillset">
+
+                    <!-- STRENGTHS -->
+                    <h2>Strengths:</h2>
+                    <ul class="custom-bullet">
+                        <li>
+                            <h3>Problem solving</h3>
+                            <p>
+                                My favorite thing about coding is problem-solving. I love trying to come up with the
+                                most
+                                effective solution to a given problem.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h3>Versatility</h3>
+                            <p>
+                                I love to try out new things and I'm a fast learner. I have a great variety of interests
+                                and
+                                I have also studied graphic design for two years. I have no problem stepping out of my
+                                usual
+                                workflow to try out something new.
+                            </p>
+                        </li>
+
+                        <li>
+                            <h3>Detail-oriented</h3>
+                            <p>
+                                I find it important to be careful and put attention to detail. If I see something small
+                                that
+                                should be fixed I have no problem pointing it out.
+                            </p>
+                        </li>
+                    </ul>
+
+                    <!-- SKILLS -->
+                    <h2>Skills: </h2>
+                    <ul class="short-list">
+                        <li>HTML</li>
+                        <li>CSS / SCSS</li>
+                        <li>Javascript</li>
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>React</li>
+                        <li>Git</li>
+                        <li>Agile Methodology</li>
+                        <li>Scrum</li>
+                        <li>UX design</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h1>Section 2 title</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod justo et imperdiet auctor. Nam
-                elementum, nulla
-                porttitor malesuada condimentum, mi elit finibus leo, sagittis faucibus dolor mauris sed nulla. Mauris
-                ultricies, velit
-                et ultricies molestie, justo eros pretium mauris, malesuada eleifend elit sapien id enim. In et mi nunc.
-                Etiam vitae
-                pulvinar metus, at condimentum erat. Curabitur varius tincidunt urna id mollis. Nullam vestibulum tempor
-                vestibulum.
-            </p>
+        <!-- SECTION: EXPERIENCE -->
+        <section class="no-transitions">
+            <!-- ANCHOR -->
+            <div class="anchor" id="experience"></div>
+
+            <div class="content-wrapper exp">
+
+                <!-- EDUCATION AND WORK EXPERIENCE -->
+                <h1>Experience</h1>
+
+                <div class="education">
+
+                    <h2>Education</h2>
+
+                    <p>
+                        <span>TAMK, Business Information Systems</span>, 2022 ->
+                    </p>
+
+                    <p class="indent">
+                        In TAMK I'm specialising in Software Production, aiming to become a fullstack-developer. The
+                        studies
+                        contain a great variety of topics including, but not limited to, Java, Javascript, React, MySQL,
+                        Agile
+                        Methodology and Git.
+                    </p>
+
+                    <p>
+                        <span>Sataedu Nakkila, Media assistant</span>, 2013 - 2016
+                    </p>
+
+                    <p class="indent">
+                        In Sataedu I specialised in Animation and Games, my main focus being on programming. During
+                        these
+                        studies I mainly worked with Unity and C#, but also learned about 3D-modeling, animation, level
+                        design,
+                        concept art and project management.
+                    </p>
+
+                    <p>
+                        <span>Sataedu Nakkila, graphic design</span>, 2011 - 2013
+                    </p>
+
+                    <p class="indent">
+                        Before switching to study game development I studied graphic design for two years. I learned
+                        about
+                        logo
+                        design, web design, page layout and entrepreneurship.
+                    </p>
+                </div>
+                <div class="work">
+                    <h2>Work experience</h2>
+                    <p>
+                        <span>Web design for Kalpaveljet</span>, 2023
+                    </p>
+
+                    <p class="indent">
+                        In collaboration with Adalia, I used Craft CMS, templates and blocks provided by Adalia, and
+                        made a
+                        new
+                        design for the website of Kalpaveljet.
+                    </p>
+
+                    <p>
+                        <span>PlaySys internship</span>, 2016
+                    </p>
+
+                    <p class="indent">
+                        During my internship at PlaySys I did level design for a game for Samsung Gear VR, and designed
+                        and
+                        made
+                        a mobile minigame with a coding partner. I also made 2D animations for Samsung Gear S3.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h1>Section 3 title</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod justo et imperdiet auctor. Nam
-                elementum, nulla
-                porttitor malesuada condimentum, mi elit finibus leo, sagittis faucibus dolor mauris sed nulla. Mauris
-                ultricies, velit
-                et ultricies molestie, justo eros pretium mauris, malesuada eleifend elit sapien id enim. In et mi nunc.
-                Etiam vitae
-                pulvinar metus, at condimentum erat. Curabitur varius tincidunt urna id mollis. Nullam vestibulum tempor
-                vestibulum.
-            </p>
+        <!-- SECTION: PROJECTS -->
+        <section class="no-transitions">
+            <!-- ANCHOR -->
+            <div class="anchor" id="projects"></div>
+
+            <div class="content-wrapper projects">
+
+                <!-- CONTENT -->
+                <h1>Projects</h1>
+
+                <!-- PROJECT -->
+                <h2 class="project-title">Work it Out!</h2>
+                <div class="project-container closed">
+                    <!-- PROJECT IMAGE -->
+                    <div class="img-container mobile-screenshots">
+                        <picture>
+                            <source media="(min-width: 500px)" srcset="img/big/sc_en.jpg">
+                            <img src="img/small/sc_en.jpg" alt="Placeholder image">
+                        </picture>
+                        <picture>
+                            <source media="(min-width: 500px)" srcset="img/big/sc_en_2.jpg">
+                            <img src="img/small/sc_en_2.jpg" alt="Placeholder image">
+                        </picture>
+                        <picture>
+                            <source media="(min-width: 500px)" srcset="img/big/sc_en_4.jpg">
+                            <img src="img/small/sc_en_4.jpg" alt="Placeholder image">
+                        </picture>
+                        <p>Screenshots of Work It Out!</p>
+                    </div>
+
+                    <!-- ANOTHER IMAGE -->
+                    <div class="img-container">
+                        <picture>
+                            <source media="(min-width: 500px)" srcset="img/big/workitout-page.png">
+                            <img src="img/small/workitout-page.png" alt="Placeholder image">
+                        </picture>
+                        <p>Web page for Work It Out!</p>
+                    </div>
+
+                    <!-- PROJECT DESCRIPTION -->
+                    <p>
+                        Work it Out! is a mobile game made for TYKKY. During this project I was a programmer, web
+                        designer and responsible for project management. My main task as a programmer was the structure
+                        and the basic functionality of the game. On top of that I was also heavily involved with the
+                        game design, story and writing some of the characters, texts and documentation for the game.
+                    </p>
+                    <p>
+                        In the project we used Scrum as the project management framework, and made the game using Unity
+                        and C#. The project began on January 2023 and ended in May of the same year. The game can be
+                        downloaded from Google Play, and it runs on Android phones.
+                    </p>
+                    <p>
+                        <a href="https://play.google.com/store/apps/details?id=com.placbo.workitout&pli=1"
+                            target="_blank">Google Play</a>
+                    </p>
+                    <p>
+                        <a href="https://webpages.tuni.fi/22tiko2c/eng.html" target="_blank">Website of Work it Out!</a>
+                    </p>
+                    <div class="minimize">
+                        <p>Minimize</p>
+                    </div>
+                </div>
+
+                <!-- PROJECT -->
+                <h2 class="project-title">Connectify</h2>
+                <div class="project-container closed">
+                    <!-- PROJECT IMAGE -->
+                    <div class="img-container mobile-screenshots">
+                        <picture>
+                            <source media="(min-width: 900px)" srcset="img/connectify_2.jpg">
+                            <img src="img/connectify_2.jpg" alt="Placeholder image">
+                        </picture>
+                        <picture>
+                            <source media="(min-width: 900px)" srcset="img/connecfity_3.jpg">
+                            <img src="img/connecfity_3.jpg" alt="Placeholder image">
+                        </picture>
+                        <picture>
+                            <source media="(min-width: 900px)" srcset="img/connectify_1.jpg">
+                            <img src="img/connectify_1.jpg" alt="Placeholder image">
+                        </picture>
+                        <p>Screenshots of Connectify</p>
+                    </div>
+                    <!-- PROJECT DESCRIPTION -->
+                    <p>
+                        Connectiy is a mobile game made for TYKKY. This project also began on January 2023 and ended on
+                        May of the same year, and I joined to the team as a programmer in February. My job in this
+                        project was again the structure and the basic functionality of the game.
+                    </p>
+                    <p>
+                        <a href="https://play.google.com/store/apps/details?id=com.pixelpros.connectify&pli=1"
+                            target="_blank">Google Play</a>
+                    </p>
+                    <p>
+                        <a href="https://webpages.tuni.fi/22tiko2e/" target="_blank">Website of Connectify</a>
+                    </p>
+                    <div class="minimize">
+                        <p>Minimize</p>
+                    </div>
+                </div>
+
+                <!-- PROJECT -->
+                <h2 class="project-title">John Shepard website</h2>
+                <div class="project-container closed">
+                    <!-- PROJECT IMAGE -->
+                    <div class="img-container">
+                        <picture>
+                            <source media="(min-width: 600px)" srcset="img/big/shepard.png">
+                            <img src="img/small/shepard.png" alt="Placeholder image">
+                        </picture>
+                        <p>The website on desktop</p>
+                    </div>
+
+                    <!-- PROJECT DECRIPTION -->
+                    <p>
+                        This website showcases the main character of Mass Effect, and it was made to showcase what I've
+                        learned during the WWW-techniques course at school. It is a mobile-first website made with HTML,
+                        CSS
+                        and a little bit of Javascript.
+                    </p>
+
+                    <p>
+                        <a href="https://homepages.tuni.fi/sumu.vuori/sass/" target="_blank">Link to the webpage</a>
+                    </p>
+                    <div class="minimize">
+                        <p>Minimize</p>
+                    </div>
+                </div>
+
+                <!-- PROJECT -->
+                <h2 class="project-title">Sammakkosanomat website</h2>
+                <div class="project-container closed">
+                    <!-- PROJECT IMAGE -->
+                    <div class="img-container">
+                        <picture>
+                            <source media="(min-width: 600px)" srcset="img/big/sasspage.png">
+                            <img src="img/small/sasspage.png" alt="Placeholder image">
+                        </picture>
+                        <p>The website on desktop</p>
+                    </div>
+
+                    <!-- PROJECT DECRIPTION -->
+                    <p>
+                        Sammakkosanomat is a website for a fictional online community. I made the website to showcase my
+                        HTML and SCSS skills as well as some Javascript. It is a mobile-first page that uses a variety
+                        of
+                        different SCSS techniques.
+                    </p>
+
+                    <p>
+                        <a href="https://homepages.tuni.fi/sumu.vuori/sass/" target="_blank">Link to the webpage</a>
+                    </p>
+                    <div class="minimize">
+                        <p>Minimize</p>
+                    </div>
+                </div>
+
+                <!-- PROJECT -->
+                <h2 class="project-title">The Reclaimer: Root force attack</h2>
+                <div class="project-container closed">
+                    <!-- PROJECT IMAGE -->
+                    <div class="img-container">
+                        <picture>
+                            <source media="(min-width: 500px)" srcset="img/big/reclaimer.jpg">
+                            <img src="img/small/reclaimer.jpg" alt="Placeholder image">
+                        </picture>
+                        <p>Screenshot from the main menu</p>
+                    </div>
+
+                    <!-- PROJECT DECRIPTION -->
+                    <p>
+                        The Reclaimer: Root force attack is a Global Game Jam game I worked on in January 2023. I worked
+                        on some utility scripts like building randomization, blood splatters and menu functionality, and
+                        made graphics like blood splatters and the main menu screen.
+                    </p>
+
+                    <p>
+                        <a href="https://v3.globalgamejam.org/2023/games/reclaimer-root-force-attack-7"
+                            target="_blank">The Reclaimer: Root force attack on GGJ</a>
+                    </p>
+                    <p><a href="https://github.com/cloudmoss/jam_roots" target="_blank">GitHub</a></p>
+                    <div class="minimize">
+                        <p>Minimize</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACT -->
+        <section class="no-transitions center">
+            <!-- ANCHOR -->
+            <div class="anchor" id="contact"></div>
+
+            <div class="content-wrapper">
+
+                <!-- CONTENT -->
+                <h1>Contact</h1>
+
+                <div class="self">
+                    <picture>
+                        <source media="(min-width: 500px)" srcset="img/big/self.jpg">
+                        <img src="img/small/self.jpg" alt="Placeholder image">
+                    </picture>
+                </div>
+
+                <h2>Sumu Vuori</h2>
+                <p>
+                    <img src="img/bullet.png" class="icon">
+                    vuori.sumu@gmail.com
+                </p>
+                <p>
+                    <img src="img/bullet.png" class="icon">
+                    <a href="https://www.linkedin.com/in/sumu-vuori-515aa92a1/" target="_blank">LinkedIn</a>
+                </p>
+                <p>
+                    <img src="img/bullet.png" class="icon">
+                    <a href="https://github.com/vuorisumu" target="_blank">GitHub</a>
+                </p>
+            </div>
         </section>
     </main>
 
-    <footer></footer>
+    <!-- FOOTER STARTS HERE -->
+    <footer>
+        <p>Sumu Vuori 2023</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="functions.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,288 @@
+@use "navigation";
+@use "theme";
+
+/* section base styles */
+section {
+  @include theme.transition;
+  padding: 5px 20px 30px 20px;
+  min-height: 80vh;
+  background-color: theme.$primary-color;
+}
+
+/* first section */
+section:first-child {
+  margin-top: navigation.$nav-height;
+}
+
+/* every other section */
+section:nth-child(even) {
+  // background-color: theme.$secondary-color;
+  background-color: theme.$secondary-color;
+  background: linear-gradient(
+    color-mix(in srgb, theme.$secondary-color, theme.$primary-color 50%),
+    theme.$secondary-color
+  );
+}
+
+/* skillset column */
+.skillset {
+  /* no default list styles */
+  ul {
+    list-style: none;
+  }
+
+  /* short list */
+  .short-list {
+    /* list element */
+    li {
+      @include theme.normaltext;
+      display: inline-block;
+
+      /* add separator between list elements */
+      &:not(:last-child)::after {
+        content: "•";
+        color: theme.$accent;
+        padding: 0 5px;
+      }
+    }
+  }
+
+  /* lists with custom bullet */
+  .custom-bullet {
+    padding-left: 5px;
+
+    /* list element */
+    li {
+      background: url("../sumu/img/bullet.png") no-repeat;
+      padding-left: 30px;
+      margin-top: 10px;
+
+      /* titles in custom buller list */
+      h3 {
+        line-height: 30px;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* remove margin and padding from text */
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* project container defaults */
+.project-container {
+  $animation-time: 0.5s;
+  transition: $animation-time;
+  overflow: hidden;
+  z-index: 0;
+  padding-bottom: 10px;
+
+  .minimize {
+    float: right;
+    cursor: pointer;
+    p {
+      color: theme.$accent;
+    }
+  }
+
+  /* container for the image */
+  .img-container {
+    transition: $animation-time;
+    /* mixes the primary color with 50% transparency */
+    background-color: color-mix(
+      in srgb,
+      theme.$secondary-accent,
+      transparent 70%
+    );
+
+    /* image description */
+    p {
+      text-align: center;
+      margin: 5px 0 0 0;
+      font-size: 14px;
+    }
+
+    /* three screenshots side by side */
+    &.mobile-screenshots {
+      display: flex;
+      flex-wrap: wrap;
+
+      /* put three pictures side by side */
+      picture {
+        flex: 33%;
+      }
+
+      /* image description still takes the whole space */
+      p {
+        flex: 100%;
+      }
+    }
+
+    /* images in project divs */
+    img {
+      transition: $animation-time;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}
+
+/* project container when closed */
+.project-container.closed {
+  max-height: 80px;
+  border-radius: 20px;
+  cursor: pointer;
+
+  /* container for the image */
+  .img-container {
+    /* shine effect graphic */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -80%;
+
+      /* shine color */
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 25%,
+        rgba(255, 255, 255, 0.7) 50%,
+        rgba(255, 255, 255, 0) 75%
+      );
+
+      display: block;
+      height: 100%;
+      width: 40%;
+      transform: skewX(-25deg);
+      z-index: 1;
+    }
+
+    /* images are a bit more transparent  */
+    img {
+      opacity: 0.6;
+    }
+
+    /* animation keyframe */
+    @keyframes shine {
+      100% {
+        left: 125%;
+      }
+    }
+
+    /* activate animations on hover */
+    &:hover {
+      transform: scale(1.1);
+      z-index: 1;
+
+      /* make images a bit more visible */
+      img {
+        opacity: 0.8;
+      }
+
+      /* activate the shine animation */
+      &::before {
+        animation: shine (0.8s);
+      }
+    }
+  }
+}
+
+/* project container when open */
+.project-container.active {
+  max-height: 3000px;
+  /* container for the image */
+  .img-container {
+    padding: 10px;
+  }
+}
+
+/* the title of each project is also clickable */
+.project-title {
+  cursor: pointer;
+}
+
+/* Bigger screen sizes */
+@media only screen and (min-width: 400px) {
+  /* prevent content from getting too big */
+  .content-wrapper {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  /* closed project container is a bit bigger */
+  .project-container.closed {
+    max-height: 150px;
+  }
+}
+
+/* desktop view */
+@media only screen and (min-width: 800px) {
+  %two-columns {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px auto;
+    grid-auto-flow: dense;
+    column-gap: 50px;
+    justify-items: start;
+  }
+
+  /* only the last section needs to be big enough */
+  section:not(:last-child) {
+    min-height: auto;
+  }
+
+  /* prevent content from getting too big */
+  .content-wrapper {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  /* put content into two columns */
+  .columns {
+    @extend %two-columns;
+
+    /* move section title to left column */
+    h1 {
+      grid-column: 1;
+      grid-row: 1;
+      margin-top: 20px;
+    }
+
+    /* continue left column with content */
+    h1 + div {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    /* put skillset container to the right column*/
+    .skillset {
+      grid-row: 1 / 3;
+      grid-column: 2;
+
+      /* make the title bigger to match section title */
+      h2 {
+        font-size: 22pt;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  /* experience is also in two columns */
+  .exp {
+    @extend %two-columns;
+    h1 {
+      grid-column: 1 / 3;
+      justify-self: center;
+    }
+  }
+
+  /* closed project container is a bit bigger */
+  .project-container.closed {
+    max-height: 250px;
+  }
+}

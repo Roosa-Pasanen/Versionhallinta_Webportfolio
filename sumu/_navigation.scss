@@ -1,36 +1,140 @@
 @use "theme";
 
 $ham-height: 50px;
-$nav-height: $ham-height + 10px;
+$nav-height: 100px;
+$shrink-height: $ham-height + 10px;
 $bar-height: 5px;
+$header-shrink-time: 0.5s;
 
+/* Fixed full width elements */
 %fixedfullwidth {
   position: fixed;
   width: 100%;
 }
 
+/* header bar */
 header {
   @extend %fixedfullwidth;
+  @include theme.transition;
+  background-color: theme.$primary-color;
   height: $nav-height;
   top: 0;
-}
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
 
-.nav {
-  @extend %fixedfullwidth;
+  /* logo banner */
+  #logo {
+    @include theme.transition;
+    border-bottom: 1px solid theme.$secondary-color;
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    gap: 15px;
 
-  ul {
-    list-style-type: none;
+    /* text in logo banner */
+    h1 {
+      display: inline-block;
+      font-size: 28pt;
+      flex: 1;
+      margin: 7px 0 0 0;
+      padding-left: 10px;
+    }
+  }
+
+  /* logo image styles */
+  .logoimg {
+    height: $ham-height;
+    width: $ham-height;
+    background-image: url(../sumu/img/logo.png);
+    background-size: cover;
+    margin-left: 10px;
+    margin-right: -10px;
+  }
+
+  /* header properties when the header is shrunken */
+  &.shrink {
+    height: $shrink-height;
+
+    /* active navigation while header is shrunken */
+    #nav.active {
+      top: $shrink-height;
+    }
   }
 }
 
+/* different colored logo on dark mode */
+[data-theme="dark"] .logoimg {
+  background-image: url(../sumu/img/logodark.png);
+}
+
+/* primary color background to header */
+.headerbg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  background-color: theme.$primary-color;
+}
+
+/* navigation container */
+#nav {
+  @extend %fixedfullwidth;
+  top: -100%;
+  z-index: -2;
+  transition: 0.5s;
+  background-color: theme.$secondary-color;
+  border-bottom: 1px solid theme.$primary-color;
+
+  /* slide into view when active */
+  &.active {
+    top: $nav-height;
+  }
+
+  /* link list in navigation */
+  ul {
+    list-style-type: none;
+
+    /* elements in navigation list */
+    li {
+      padding: 6px;
+
+      /* links in navigation */
+      a {
+        @include theme.monospacetitle;
+        font-weight: 400;
+        color: theme.$secondary-accent;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+
+      /* active link in navigation */
+      a.active {
+        font-weight: 700;
+        color: theme.$accent;
+      }
+    }
+  }
+}
+
+/* menu button */
 #hamburger {
   width: $ham-height;
   height: $ham-height;
-  position: absolute;
-  float: right;
-  right: 10px;
-  top: 10px;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  transition: $header-shrink-time;
+  margin-right: 15px;
 
+  /* all bars in the menu hamburger */
   .ham {
     width: 80%;
     height: $bar-height;
@@ -40,13 +144,96 @@ header {
     top: 50%;
     left: 10%;
     margin-top: -($bar-height / 2);
+    transition: top 0.2s 0.15s, transform 0.2s, opacity 0.2s;
   }
 
+  /* top bar */
   .bar-top {
     top: 25%;
   }
 
+  /* bottom bar */
   .bar-bot {
     top: 75%;
+  }
+}
+
+/* menu button when active */
+#hamburger.active {
+  /* reverse animation */
+  .ham {
+    transition: top 0.2s, transform 0.2s 0.15s, opacity 0.2s;
+  }
+
+  /* animate top bar */
+  .bar-top {
+    transform: rotate(-45deg);
+    top: 50%;
+  }
+
+  /* animate middle bar */
+  .bar-mid {
+    opacity: 0%;
+  }
+
+  /* animate bottom bar */
+  .bar-bot {
+    transform: rotate(45deg);
+    top: 50%;
+  }
+}
+
+/* desktop view */
+@media only screen and (min-width: 800px) {
+  /* different looking header on desktop */
+  header {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: theme.$primary-color;
+    flex-wrap: wrap;
+
+    /* reposition logo div */
+    #logo {
+      background-color: transparent;
+      order: 1;
+      flex-grow: 1;
+      margin-left: 5px;
+    }
+
+    /* hide hamburger menu */
+    #hamburger {
+      display: none;
+    }
+
+    /* reposition nav div */
+    #nav {
+      order: 2;
+      width: auto;
+      position: static;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: $nav-height;
+      background-color: transparent;
+      order: 2;
+
+      ul {
+        margin: 0;
+        li {
+          display: inline-block;
+        }
+      }
+    }
+
+    /*resize navigation along with the rest of the header */
+    &.shrink {
+      #nav {
+        height: $shrink-height;
+      }
+    }
   }
 }

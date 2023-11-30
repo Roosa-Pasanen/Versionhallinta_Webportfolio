@@ -1,0 +1,113 @@
+/* Grid container settings */
+.container {
+  display: grid;
+  grid-template-columns: 25% 40% auto;
+}
+
+/* General image settings */
+img {
+  width: 50px;
+}
+
+/* General website body settings */
+body {
+  background-color: antiquewhite;
+  background-image: url(cork.png);
+}
+
+/* Header settings */
+header {
+  /* Content display settings */
+  display: flex;
+  justify-content: space-between; /* Content on both sides */
+  align-items: center;
+  border-radius: 10px; /* Rounded corners */
+  padding: auto;
+  outline-style: solid;
+
+  /* Text settings */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  color: black;
+
+  /* Colors */
+  outline-color: darkcyan;
+  background-color: azure;
+}
+
+/* Section box settings */
+section {
+  /* Content display settings */
+  border-radius: 10px; /* Rounded corners */
+  margin: 15px;
+  padding: 20px;
+  width: auto;
+  height: auto;
+
+  /* Colors */
+  border: 1px solid indigo;
+  background-color: aliceblue;
+}
+
+/* Main box settings*/
+main {
+  /* Content display settings */
+  border-radius: 10px; /* Rounded corners */
+  margin: 15px;
+  padding: 20px;
+  width: auto;
+  height: auto;
+
+  /* Colors */
+  border: 1px solid indigo;
+  background-color: aliceblue;
+}
+
+/* Text settings */
+
+/* Textbox text settings*/
+div {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+/* Different screensizes */
+
+/* Medium */
+@media screen and (max-width: 1000px) {
+  .profile {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  main {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .container {
+    grid-template-columns: auto auto;
+  }
+}
+
+/* Small */
+@media screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: auto;
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}

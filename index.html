@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <!-- Change if language is other than English
         American English = "en-US" (if you want to be specific),
         Finnish = "fi" -->
@@ -8,31 +8,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css" />
-    <title>Document</title>
+    <title>Hub</title>
 </head>
 
 <body>
+    <div id="darkbg"></div>
     <header>
-        <h1>Title</h1>
+        <div id="switch">
+            <span class="light b1"></span>
+            <span class="light b2"></span>
+            <span class="light b3"></span>
+            <span class="light b4"></span>
+        </div>
     </header>
 
     <main>
-        <div class="hublink">
-            <a href="#">Link 1</a>
+        <h1>Portfolio hub</h1>
+        <div class="hublink" id="anni">
+            <a href="a-kansio/index.html">Anni</a>
         </div>
 
-        <div class="hublink">
-            <a href="#">Link 2</a>
+        <div class="hublink" id="patrick">
+            <a href="patrick/pate.html">Patrick</a>
         </div>
 
-        <div class="hublink">
-            <a href="#">Link 3</a>
+        <div class="hublink" id="roosa">
+            <a href="portroosa/portmain_roosa.html">Roosa</a>
+        </div>
+
+        <div class="hublink" id="sumu">
+            <a href="sumu/sumu.html">Sumu</a>
         </div>
     </main>
 
     <footer>
         <p>2023</p>
     </footer>
+
+    <script type="text/javascript">
+        // Assigns transition time only after load
+        document.addEventListener("DOMContentLoaded", function () {
+            let root = document.querySelector(":root");
+            setTimeout(function () {
+                root.style.setProperty("--transition-time", "0.2s");
+            }, 300);
+        });
+
+        // call theme check on page load
+        window.onload = function () {
+            checkTheme();
+        };
+
+        // theme change variables
+        const bulb = document.getElementById("switch");
+        const darkbg = document.getElementById("darkbg");
+        let darkTheme = false;
+
+        // check if theme preference has already been set
+        function checkTheme() {
+            // if this is not the first time on this site
+            const prevTheme = localStorage.getItem("theme");
+            if (prevTheme) {
+                setTheme(prevTheme);
+                return;
+            }
+
+            // first time on site but prefers dark theme
+            const darkThemePreference = window.matchMedia("(prefers-color-scheme: dark)");
+            if (darkThemePreference.matches) {
+                setTheme("dark");
+                return;
+            }
+
+            // set default theme
+            setTheme("light");
+        }
+
+        // click on the lightbulb
+        bulb.addEventListener("click", () => {
+            let themeName = darkTheme ? "light" : "dark";
+            setTheme(themeName);
+        });
+
+        // theme change function
+        function setTheme(themeName) {
+            document.documentElement.setAttribute("data-theme", themeName);
+            localStorage.setItem("theme", themeName);
+            darkTheme = themeName === "dark";
+            darkTheme
+                ? bulb.classList.add("lightsoff")
+                : bulb.classList.remove("lightsoff");
+
+            darkTheme
+                ? darkbg.classList.add("lightsoff")
+                : darkbg.classList.remove("lightsoff");
+        }
+    </script>
 </body>
 
 </html>

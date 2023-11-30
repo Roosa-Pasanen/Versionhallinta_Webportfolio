@@ -1,0 +1,85 @@
+@import "templatesass.scss";
+
+/* Light switch styles */
+#switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: $transition-time;
+
+  /* Same animation time in whole bulb */
+  & * {
+    transition: $transition-time;
+  }
+
+  /* All parts of light switch*/
+  .light {
+    display: block;
+  }
+
+  /* Bulb */
+  .b1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffeb80;
+    margin-bottom: -4px;
+    box-shadow: inset -3px -5px 3px 3px #ffc385;
+  }
+
+  /* Rest of the graphic */
+  .b2,
+  .b3,
+  .b4 {
+    width: 24px;
+    height: 8px;
+    left: 50%;
+    position: relative;
+    margin-left: -12px;
+    background-color: #d2d2d2;
+    box-shadow: inset 0px -2px 2px 1px;
+  }
+
+  /* Smoothen the border */
+  .b3 {
+    border-radius: 0 0 5px 5px;
+  }
+
+  /* Smoothen the border even more */
+  .b4 {
+    width: 18px;
+    margin-left: -9px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  /* Shine on the back of the lightbulb */
+  &::before {
+    content: "";
+    display: block;
+    height: 70px;
+    z-index: -5;
+    width: 70px;
+    isolation: isolate;
+    position: absolute;
+    top: -19px;
+    left: -16px;
+    // background: radial-gradient(rgb(254, 255, 201) 0%, transparent 70%);
+  }
+
+  /* Lights off */
+  &.lightsoff {
+    /* Recolor the bulb */
+    .b1 {
+      background-color: #9d9f91;
+      box-shadow: inset -3px -5px 3px 3px #707070;
+    }
+
+    /* Recolor the rest */
+    .b2,
+    .b3,
+    .b4 {
+      background-color: gray;
+    }
+  }
+}

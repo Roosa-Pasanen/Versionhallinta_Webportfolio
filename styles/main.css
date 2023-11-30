@@ -1,3 +1,122 @@
+/* Variables */
+:root {
+  --background: #dbfff9;
+  --secondary-background: #9ca2ff;
+  --darkcolor: #261fa6;
+  --secondary-darkcolor: #090123;
+  --text: #a1a1a1;
+  --transition-time: 0s;
+}
+
+[data-theme=dark] {
+  --text: #aaaaaa;
+}
+
+/* Extends */
+header, main, footer {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+html, body, #darkbg {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* Mixins */
+/* SCSS */
+/* Light switch styles */
+#switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: var(--transition-time);
+  /* Same animation time in whole bulb */
+  /* All parts of light switch*/
+  /* Bulb */
+  /* Rest of the graphic */
+  /* Smoothen the border */
+  /* Smoothen the border even more */
+  /* Shine on the back of the lightbulb */
+  /* Lights off */
+}
+#switch * {
+  transition: var(--transition-time);
+}
+#switch .light {
+  display: block;
+}
+#switch .b1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffeb80;
+  margin-bottom: -4px;
+  box-shadow: inset -3px -5px 3px 3px #ffc385;
+}
+#switch .b2,
+#switch .b3,
+#switch .b4 {
+  width: 24px;
+  height: 8px;
+  left: 50%;
+  position: relative;
+  margin-left: -12px;
+  background-color: #d2d2d2;
+  box-shadow: inset 0px -2px 2px 1px;
+}
+#switch .b3 {
+  border-radius: 0 0 5px 5px;
+}
+#switch .b4 {
+  width: 18px;
+  margin-left: -9px;
+  border-radius: 0 0 8px 8px;
+}
+#switch::before {
+  content: "";
+  display: block;
+  height: 70px;
+  z-index: -5;
+  width: 70px;
+  isolation: isolate;
+  position: absolute;
+  top: -19px;
+  left: -16px;
+}
+#switch.lightsoff {
+  /* Recolor the bulb */
+  /* Recolor the rest */
+}
+#switch.lightsoff .b1 {
+  background-color: #9d9f91;
+  box-shadow: inset -3px -5px 3px 3px #707070;
+}
+#switch.lightsoff .b2,
+#switch.lightsoff .b3,
+#switch.lightsoff .b4 {
+  background-color: gray;
+}
+
+/* Variables */
+:root {
+  --background: #dbfff9;
+  --secondary-background: #9ca2ff;
+  --darkcolor: #261fa6;
+  --secondary-darkcolor: #090123;
+  --text: #a1a1a1;
+  --transition-time: 0s;
+}
+
+[data-theme=dark] {
+  --text: #aaaaaa;
+}
+
+/* Extends */
 footer, main, header {
   width: 100%;
   padding: 0;
@@ -5,16 +124,79 @@ footer, main, header {
   text-align: center;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-}
-main .hublink {
-  flex: 100%;
+#darkbg, body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
-@media only screen and (min-width: 700px) {
-  main .hublink {
-    flex: 33%;
+/* Mixins */
+/* SCSS */
+/* Full width */
+/* Full width body */
+body {
+  display: grid;
+  align-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(var(--background), var(--secondary-background));
+  transition: var(--transition-time);
+}
+
+/* Dark background color */
+#darkbg {
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(var(--darkcolor), var(--secondary-darkcolor));
+  opacity: 0;
+  z-index: -1;
+  transition: var(--transition-time);
+  /* Fade in the color */
+}
+#darkbg.lightsoff {
+  opacity: 1;
+}
+
+/* Page header */
+/* Page title */
+h1 {
+  color: var(--text);
+  grid-column: 1/-1;
+}
+
+/* Content of the page  */
+main {
+  display: grid;
+  gap: 20px;
+}
+main .hublink {
+  padding: 20px;
+}
+main .hublink a {
+  color: #fff;
+}
+main .hublink#anni {
+  background-color: green;
+}
+main .hublink#patrick {
+  background-color: blue;
+}
+main .hublink#roosa {
+  background-color: yellow;
+}
+main .hublink#sumu {
+  background-color: black;
+}
+
+/* Footer */
+/* Bigger screen */
+@media only screen and (min-width: 500px) {
+  main {
+    grid-template-columns: auto auto;
+  }
+}
+/* Even bigger screens */
+@media only screen and (min-width: 800px) {
+  main {
+    grid-template-columns: auto auto auto auto;
   }
 }/*# sourceMappingURL=main.css.map */

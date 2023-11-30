@@ -1,68 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Change if language is other than English
-        American English = "en-US" (if you want to be specific),
-        Finnish = "fi" -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <header>
-        <!--
-            Small image on top
-            Shortlinks to github & Linkedin
-        -->
+      <p>
+      <h3>Roosa Pasanen</h3>
+      <a href="https://github.com/Roosa-Pasanen"
+        ><img src="githublogo.png"
+      /></a>
+    </p>
     </header>
-
-    <section id="profile">
-        <!--
-            Basic profile information, photo
-        -->
-
-        <div>Nimi</div>
-        <p>Roosa Pasanen</p>
-        <div>Nykyinen työ</div>
+    <div class="container">
+      <section id="profile">
+        <b>Tällä hetkellä</b>
         <p>Opiskelija</p>
         <p>TAMK</p>
-        <div>Github (tee linkki)</div>
-    </section>
+        <a href="https://github.com/Roosa-Pasanen"
+        ><b>Github</b></a>
+      </section>
 
-    <main>
-        <!--
-            Kerro jotain itsestäsi, notable stuff you've worked on etc, why good
-            hire and so on
-        -->
-        <p>ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
-        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
-        TEEN JOTAIN EHKÄ
-        ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
-        </p>
-    </main>
+      <main>
+        <h3>Programming stuff</h3>
+        <p>Nothing to show (currently)</p>
+      </main>
+      <div class="sidebar">
+        <section id="education">
+          <h3>Koulutus</h3>
+          <p>Tietojenkäsittelyn tradenomi (TAMK) <br> Arvioitu valmistumisaika: 2025</p>
+          <p>Hygieniapassi</p>
+        </section>
 
-    <section id="education">
-        <!--
-            Education, certifications etc.
-        -->
-
-        <h3>Koulutus</h3>
-        <p>Tietojenkäsittelyn tradenomi (TAMK)</p>
-        <p>Arvioitu valmistumisaika: 2025</p>
-    </section>
-
-    <section id="experience">
-        <!--
-            Any work experience here
-        -->
-        <h3>Kokemus</h3>
-        <div>Avustaja Mindtrek-konferenssissa (2023)</div>
-    </section>
-
-    <footer>
-        <!--
-            Anything extra
-        -->
-    </footer>
-</body>
+        <section id="experience">
+          <h3>Kokemus</h3>
+          <div>Avustaja Mindtrek-konferenssissa (2023)</div>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,11 +1,138 @@
 @use "navigation";
 @use "theme";
+@use "sections";
 
-body {
-  background-color: theme.$primary-color;
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth !important;
 }
 
-p,
-h1 {
-  color: theme.$text-color;
+/* default background color and reset margins */
+body {
+  @include theme.transition;
+  background-color: theme.$primary-color;
+  margin: 0;
+  padding: 0;
+}
+
+/* conctact section info */
+.center {
+  p {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-left: -15px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 25px;
+  }
+}
+
+/* default text */
+p {
+  @include theme.normaltext;
+}
+
+/* important text will be bolded */
+p span {
+  font-weight: 600;
+  color: theme.$secondary-accent;
+}
+
+/* indented text block */
+.indent {
+  padding-left: 30px;
+}
+
+/* link inside a paragraph */
+p a {
+  color: theme.$accent;
+}
+
+/* header title */
+header h1,
+header h1 a {
+  @include theme.monospacetitle;
+  font-size: 7vw;
+  line-height: 20pt;
+  text-decoration: 2px underline theme.$accent;
+}
+
+/* other big titles */
+main h1 {
+  @include theme.monospacetitle;
+  font-size: 22pt;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* medium titles */
+h2 {
+  @include theme.monospacetitle;
+  color: theme.$accent;
+  margin-top: 40px;
+}
+
+/* smaller titles */
+h3 {
+  @include theme.monospacetitle;
+}
+
+/* anchors for sections */
+.anchor {
+  position: relative;
+  top: -(navigation.$shrink-height);
+
+  /* first section needs bigger anchor */
+  &:first-of-type {
+    top: -(navigation.$nav-height - 40px);
+  }
+}
+
+/* default image style */
+img {
+  max-width: 100%;
+}
+
+/* banner image container */
+.hero {
+  margin: -7px -20px 10px -20px;
+  max-height: 450px;
+  overflow: hidden;
+  display: grid;
+  align-content: stretch;
+}
+
+/* self portrait size */
+.self {
+  aspect-ratio: 1/1;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* move the image a bit more upwards */
+  & img {
+    margin-top: -7%;
+  }
+}
+
+/* page footer */
+footer {
+  background-color: theme.$secondary-color;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* bigger window size */
+@media only screen and (min-width: 400px) {
+  header h1,
+  header h1 a {
+    font-size: 26pt;
+  }
 }

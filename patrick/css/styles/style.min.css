@@ -1,0 +1,83 @@
+dl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: #372549;
+  color: #eacdc2;
+}
+
+.leftSection {
+  padding: 20px;
+  align-items: center;
+}
+.leftSection h2 {
+  margin-bottom: 20px;
+}
+.leftSection :not(h2, dt, img) {
+  background-color: #774c60;
+  padding: 10px;
+  padding-bottom: 30px;
+  box-shadow: 0px 5px 10px #1a1423;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+.leftSection :not(h2, dt, img) dd {
+  box-shadow: 0px 8px 10px #3d2833;
+}
+.leftSection :not(h2, dt, img) dt:not(:first-of-type) {
+  margin-top: 20px;
+}
+.leftSection :not(h2, dt, img) dt {
+  font-size: 18px;
+  font-weight: bold;
+}
+.leftSection :not(h2, dt, img) img {
+  width: auto;
+  height: 60px;
+  padding-right: 20px;
+}
+
+nav {
+  background-color: #1a1423;
+  padding: 20px;
+}
+
+header {
+  background-color: #1a1423;
+  color: #b75d69;
+  text-align: center;
+  padding: 50px;
+  padding-top: 20px;
+  box-shadow: -1px 5px 4px rgb(8, 0, 22) inset;
+}
+header img {
+  padding-bottom: 20px;
+  width: 150px;
+  height: auto;
+}
+header h3 {
+  text-align: left;
+}
+
+footer {
+  background-color: #1a1423;
+  text-align: center;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    margin: auto;
+    width: 60%;
+  }
+}/*# sourceMappingURL=style.min.css.map */

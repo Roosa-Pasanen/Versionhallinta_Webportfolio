@@ -1,7 +1,42 @@
 /* Variables */
+$background: var(--background);
+$secondary-background: var(--secondary-background);
+$darkcolor: var(--darkcolor);
+$secondary-darkcolor: var(--secondary-darkcolor);
+$textcolor: var(--text);
+$primary-color: rgb(75, 75, 120);
+$transition-time: var(--transition-time);
+
+:root {
+  --background: #dbfff9;
+  --secondary-background: #9ca2ff;
+  --darkcolor: #261fa6;
+  --secondary-darkcolor: #090123;
+  --text: #a1a1a1;
+  --transition-time: 0s;
+}
+
+[data-theme="dark"] {
+  --text: #aaaaaa;
+}
 
 /* Extends */
+%fullwidth {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+%resetmargins {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
 
 /* Mixins */
+@mixin linkbutton($bgcolor: $primary-color) {
+  background-color: $bgcolor;
+}
 
 /* SCSS */

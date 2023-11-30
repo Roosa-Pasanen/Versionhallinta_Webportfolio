@@ -1,9 +1,103 @@
-$dark-theme: false !default;
-$primary-color: #ffffff !default;
-$text-color: #5f5c5b !default;
-$accent: #f59319;
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Courier+Prime:wght@400;700&display=swap");
 
-@if $dark-theme {
-  $primary-color: #1b1918;
-  $text-color: #e8e4e3;
+/* scss variables */
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$text-color: var(--text-color);
+$accent: var(--accent);
+$secondary-accent: var(--secondary-accent);
+$transition-time: var(--transition-time);
+$themebutton-color: var(--themebutton-color);
+
+@mixin transition {
+  transition: $transition-time;
+}
+
+/* default colors */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #ffcf94;
+  --text-color: #3a3b3c;
+  --accent: #cf5390;
+  --secondary-accent: #7f1f9b;
+  --transition-time: none;
+  --themebutton-color: #f5830d;
+}
+
+/* dark theme variables */
+[data-theme="dark"] {
+  --primary-color: #36151d;
+  --secondary-color: #261319;
+  --text-color: #fff;
+  --accent: #fd6432;
+  --secondary-accent: #ffa159;
+  --themebutton-color: #ffa159;
+}
+
+/* default styles for titles */
+@mixin monospacetitle {
+  font-family: "Courier Prime", monospace;
+  color: $secondary-accent;
+  font-weight: 700;
+}
+
+/* default style for text */
+@mixin normaltext {
+  font-family: "Chakra Petch", sans-serif;
+  color: $text-color;
+  font-weight: 400;
+}
+
+/* theme button container */
+#themebutton {
+  @include transition();
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  background-color: color-mix(in srgb, $accent, transparent 80%);
+  border-radius: 15px;
+  border: inset 2px $primary-color;
+  margin-right: 15px;
+
+  /* graphic in both sun and moon */
+  #sun-moon {
+    @include transition();
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+  }
+
+  /* graphic in sun mode */
+  &.moon #sun-moon {
+    transform: translate(200%, 29%);
+    outline-offset: 1px;
+    background-color: $themebutton-color;
+    outline: 4px dotted $themebutton-color;
+  }
+
+  /* graphic in moon mode */
+  &:not(.moon) #sun-moon {
+    outline: none;
+    background-color: transparent;
+    transform: translate(50%, 21%);
+    box-shadow: -5px 3px 0 3px $themebutton-color;
+  }
+
+  /* hide theme change button when menu is not active */
+  &.hide {
+    margin-top: -200px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  #themebutton {
+    z-index: 200;
+    order: 3;
+    margin-right: 15px;
+    &.hide {
+      margin-top: 0px;
+    }
+  }
 }
