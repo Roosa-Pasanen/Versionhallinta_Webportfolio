@@ -4,12 +4,22 @@
   --secondary-background: #9ca2ff;
   --darkcolor: #261fa6;
   --secondary-darkcolor: #090123;
-  --text: #a1a1a1;
+  --anni: #f6f8f4;
+  --patrick: #b75d69;
+  --roosa: #f6e7d3;
+  --sumu: #ffcf94;
+  --text: #1f1c2e;
+  --title: #2e2857;
   --transition-time: 0s;
 }
 
 [data-theme=dark] {
-  --text: #aaaaaa;
+  --text: #dddddd;
+  --title: #aaaaaa;
+  --anni: #1f1e1e;
+  --patrick: #3d2833;
+  --roosa: #574a3e;
+  --sumu: #36151d;
 }
 
 /* Extends */
